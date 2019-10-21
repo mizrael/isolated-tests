@@ -20,7 +20,7 @@ namespace tests
         }
 
         [Fact]
-        public void Test1()
+        public void GoodTest1()
         {
             var expectedEx = new Exception("exception from dependency A");
             _depAMock.WhenForAnyArgs(a => a.Foo()).Throw(expectedEx);
@@ -33,7 +33,7 @@ namespace tests
         }
         
         [Fact]
-        public void Test2()
+        public void GoodTest2()
         {
             _sut.DoSomething();
 

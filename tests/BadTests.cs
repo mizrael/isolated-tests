@@ -5,13 +5,13 @@ using NSubstitute;
 
 namespace tests
 {
-    public class FailingTests
+    public class BadTests
     {
         private static readonly Class1 _sut;
         private static readonly IDependencyA _depAMock;
         private static readonly IDependencyB _depBMock;
 
-        static FailingTests(){
+        static BadTests(){
             Console.WriteLine("in the cTor...");
 
             _depAMock = Substitute.For<IDependencyA>();
@@ -20,7 +20,7 @@ namespace tests
         }
 
         [Fact]
-        public void Test1()
+        public void BadTest1()
         {
             var expectedEx = new Exception("exception from dependency A");
             _depAMock.WhenForAnyArgs(a => a.Foo()).Throw(expectedEx);
@@ -33,7 +33,7 @@ namespace tests
         }
         
         [Fact]
-        public void Test2()
+        public void BadTest2()
         {
             _sut.DoSomething();
 
